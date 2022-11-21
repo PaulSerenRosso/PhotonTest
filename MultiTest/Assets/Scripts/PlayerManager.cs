@@ -150,10 +150,11 @@ namespace Com.MyCompany.MyGame
             }
             // We are only interested in Beamers
             // we should be using tags but for the sake of distribution, let's simply check by name.
-            if (!other.name.Contains("Beam"))
+            if (!other.name.Contains("Beam") || other.gameObject.transform.parent == this.beams.transform)
             {
                 return;
             }
+         
             Health -= 0.1f;
         }
         /// <summary>
@@ -170,7 +171,7 @@ namespace Com.MyCompany.MyGame
             }
             // We are only interested in Beamers
             // we should be using tags but for the sake of distribution, let's simply check by name.
-            if (!other.name.Contains("Beam"))
+            if (!other.name.Contains("Beam") ||other.gameObject.transform.parent == this.beams.transform)
             {
                 return;
             }
